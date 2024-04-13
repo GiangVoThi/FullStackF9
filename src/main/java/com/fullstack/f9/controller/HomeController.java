@@ -9,4 +9,8 @@ public class HomeController {
     public String doGetHome() {
         return "/views/home";
     }
+    @GetMapping("/hello")
+    public String doGetHello() {
+        return "/views/hello";
+    }
 }
