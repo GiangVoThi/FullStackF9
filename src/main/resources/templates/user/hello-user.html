@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Page Hello User</title>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            let paramUrl = new URLSearchParams(window.location.search);
+            let userName1 = paramUrl.get("UserName1");
+            let userName2 = paramUrl.get("UserName2");
+            let helloDomString = "";
+            let helloDomString2 = "";
+            if(userName1){
+                helloDomString = `<p>Hello ${userName1}</p>`
+            } else {
+                helloDomString = '<p>Hello F9</p>'
+            }
+
+            if(userName2){
+                helloDomString2 = `<p>Hello ${userName2}</p>`
+            } else {
+                helloDomString2 = '<p>Hello F9</p>'
+            }
+
+            $("#tagHelloUser").append(helloDomString);
+            $("#tagHelloUser").append(helloDomString2);
+
+        })
+    </script>
+</head>
+<body>
+    <div id="tagHelloUser">
+    </div>
+</body>
+</html>
